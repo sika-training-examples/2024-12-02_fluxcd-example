@@ -27,3 +27,7 @@ flux bootstrap gitlab \
   --path=clusters/eu \
   --personal
 ```
+
+```
+flux reconcile source git flux-system --namespace=flux-system
+```
