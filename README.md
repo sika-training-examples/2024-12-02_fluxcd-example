@@ -14,3 +14,16 @@ flux bootstrap gitlab \
   --path=clusters/us \
   --personal
 ```
+
+```bash
+export GITLAB_TOKEN=1oP9695k71pm6mg2MEyg
+
+flux bootstrap gitlab \
+  --deploy-token-auth \
+  --owner=ondrejsika \
+  --repository=fluxcd-example-2024-12-02 \
+  --branch=master \
+  --hostname=gitlab.sikademo.com \
+  --path=clusters/eu \
+  --personal
+```
