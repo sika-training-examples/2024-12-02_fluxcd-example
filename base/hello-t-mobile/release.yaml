@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hello-t-mobile
+  namespace: hello-t-mobile
+spec:
+  releaseName: hello-t-mobile
+  chart:
+    spec:
+      chart: hello-world-example
+      sourceRef:
+        kind: HelmRepository
+        name: artifactory
+        namespace: flux-system
+      version: "0.1.0"
+  interval: 1m
+  values:
+    hello-world:
+      image: artifactory.sikademo.com/hello-world-docker/hello-world-server:v0.1.0
+      imagePullSecret: image-pull-secret
+      replicas: 2

@@ -1,0 +1,9 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hello-t-mobile
+  namespace: hello-t-mobile
+spec:
+  values:
+    hello-world:
+      host: hello-t-mobile.k8s-eu.sikademo.com
